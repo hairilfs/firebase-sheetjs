@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  	<!-- Basic Page Needs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Firebase &#x1F525;</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+  	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/skeleton.min.css">
+
+  	<!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+	  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+		<div class="row">
+		  <div class="on-half column" style="margin-top: 10%">
+				<h4>Hello, bro!</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+		</div>
+
+		<form id="add_user" action="" method="post">
+			<input type="hidden" name="mode" value="add">
+			<input type="hidden" name="id" value="">
+
+		  	<div class="row">
+		    	<div class="six columns">
+			      	<label for="nama">Nama</label>
+			      	<input class="u-full-width" placeholder="Nama anda..." id="nama" name="nama" type="text" required>
+		    	</div>
+		    	<div class="six columns">
+			      	<label for="email">Email</label>
+			      	<input class="u-full-width" placeholder="Email anda..." id="email" name="email" type="email" required>
+		    	</div>
+		  	</div>
+
+		  	<div id="new_data">
+				<input type="submit" class="button-primary" name="submit" value="Tambah user">
+				<input type="reset" name="reset" value="Reset">
+			</div>
+
+			<div id="edit_data" style="display: none;">
+				<input type="submit" class="button-primary" name="submit" value="Update user">
+				<button id="cancel" type="button" onclick="return cancelEdit(this);">Cancel</button>
+			</div>
+		</form>
+
+		<table class="u-full-width">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nama</th>
+					<th>Email</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td colspan="4">Loading...</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script
+	src="https://code.jquery.com/jquery-1.12.4.min.js"
+	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase-database.js"></script>
+	<script src="js/app.js"></script>
+
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

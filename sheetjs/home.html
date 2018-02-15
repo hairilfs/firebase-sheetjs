@@ -19,7 +19,8 @@
 
 
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.11.18/xlsx.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.11.18/xlsx.min.js"></script> -->
+	<script src="http://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script type="text/javascript">
 		
@@ -62,8 +63,8 @@
 		function renderHtml(json) {
 			var content = '';
 
-
-			json.sheet1.forEach(function(value, index){
+			var index = Object.keys(json)[0]; // ambil sheet1/Sheet1
+			json[index].forEach(function(value, index){
 				if (value.length == 0) { return; }
 				content +=	'<tr>';
 

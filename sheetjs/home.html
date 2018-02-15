@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SheetJS</title>
+</head>
+<body>
+	<h1>SheetJS DEMO.</h1>
+	
+	<form>
+		<label>Harap upload file .xlsx</label> <br>
+		<input type="file" name="file" id="xlf">
+	</form>
+
+	<div id="result" style="margin-top: 10px;">		
+		<table border="1">	
+		</table>
+	</div>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.11.18/xlsx.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		var xl = document.getElementById('xlf');
+			xl.addEventListener('change', handleFile, false);
+		var excel_data = {};
+
+		function handleFile(e) { 
+			readURL(e.target.files);
+		}
+
+		function readURL(input) {
+	  		var f = input[0];
+	  		var reader = new FileReader();
+
+	    	reader.onload = function(e) {
+	    		var data = e.target.result;
+
+	    		var x = to_json(XLSX.read(data, { 
+	    			type: 'array' 
+	    		}));
+
+			console.log(x);
+	    		renderHtml(x);
+	    	}
+
+	    	reader.readAsArrayBuffer(f);
+		}
+
+		function to_json(workbook) {
+			workbook.SheetNames.forEach(function(sheetName) {
+				var roa = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName], { header:1 });
+				if(roa.length) excel_data[sheetName] = roa;
+			});
+			
+			return excel_data;
+			// return JSON.stringify(excel_data, 2, 2);
+		}
+
+		function renderHtml(json) {
+			var content = '';
+
+
+			json.sheet1.forEach(function(value, index){
+				if (value.length == 0) { return; }
+				content +=	'<tr>';
+
+					value.forEach(function(vv, ii){
+						if (index == 0) {
+							content += '<th>'+vv+'</th>';
+						} else {
+							content += '<td>'+vv+'</td>';
+
+						}
+					});
+				content +=	'</tr>';
+			});
+
+			$('#result table').append(content);
+
+
+		}
+
+	</script>
+</body>
+</html>

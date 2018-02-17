@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  	<!-- Basic Page Needs
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Stock Taking &#x1F525;</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+  	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<!-- FONT
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="../css/normalize.min.css">
+	<link rel="stylesheet" href="../css/skeleton.min.css">
+
+	<link rel="stylesheet" href="style.css">
+
+  	<!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+	  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="container">
+		<div class="row">
+		  <div class="on-half column" style="margin-top: 10%">
+				<h4>Stock Taking</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.</p>
+			</div>
+		</div>
+
+		<div class="row">
+	    	<div class="six columns">
+	    		<button class="btn-top" id="upload_excel">Upload excel</button>
+	    		<button class="btn-top" id="see_firebase">See firebase data</button>		      	
+	    	</div>
+	  	</div>
+
+		<div class="hide row" id="row_file">
+	    	<div class="six columns">
+	    		<input type="file" name="file_excel" id="file_excel">
+	    	</div>
+	    	<table class="hide in-row-file u-full-width" id="table_excel">
+			</table>
+    		<button class="hide in-row-file" id="upload_firebase">Upload to firebase</button>
+	  	</div>
+
+    	<table class="hide u-full-width" id="table_firebase">
+			<thead></thead>
+			<tbody></tbody>
+		</table>
+
+	</div>
+
+	<script
+	src="https://code.jquery.com/jquery-1.12.4.min.js"
+	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	crossorigin="anonymous"></script>
+	<script src="http://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/moment@2.20.1/moment.min.js"></script>	
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>	
+	<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase-database.js"></script>
+	<script src="script.js"></script>
+
+<!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

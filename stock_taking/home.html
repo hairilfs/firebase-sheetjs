@@ -50,7 +50,7 @@
 	  	</div>
 
 		<div class="hide row" id="row_file">
-	    	<div class="six columns">
+	    	<div class="six columns in-row-file">
 	    		<input type="file" name="file_excel" id="file_excel">
 	    	</div>
 	    	<table class="hide in-row-file u-full-width" id="table_excel">
@@ -58,10 +58,24 @@
     		<button class="hide in-row-file" id="upload_firebase">Upload to firebase</button>
 	  	</div>
 
-    	<table class="hide u-full-width" id="table_firebase">
-			<thead></thead>
+		<div class="row" id="row_firebase">
+	    	<table class="hide in-row-firebase u-full-width" id="table_firebase">
+				<thead>
+					<tr><th>Oops, no data for today</th></tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+    		<button class="hide in-row-firebase" id="download_excel">Download excel</button>
+	  	</div>
+
+    	<!-- <table class="hide u-full-width" id="table_firebase">
+			<thead>
+				<tr>
+					<th>Oops, no data for today</th>
+				</tr>
+			</thead>
 			<tbody></tbody>
-		</table>
+		</table> -->
 
 	</div>
 
@@ -69,11 +83,12 @@
 	src="https://code.jquery.com/jquery-1.12.4.min.js"
 	integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
 	crossorigin="anonymous"></script>
-	<script src="http://oss.sheetjs.com/js-xlsx/xlsx.full.min.js"></script>	
+	<script src="https://unpkg.com/xlsx@0.12.1/dist/xlsx.full.min.js"></script>	
 	<script src="https://cdn.jsdelivr.net/npm/moment@2.20.1/moment.min.js"></script>	
 	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>	
 	<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase-database.js"></script>
+
 	<script src="script.js"></script>
 
 <!-- End Document
